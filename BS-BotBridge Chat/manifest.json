@@ -1,0 +1,14 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "BS_BotBridge_Chat",
+  "name": "BS-BotBridge Chat",
+  "author": "Arimodu",
+  "version": "0.0.1",
+  "description": "",
+  "gameVersion": "1.18.3",
+  "dependsOn": {
+    "BSIPA": "^4.2.0",
+    "SiraUtil": "^3.1.0",
+    "BS_BotBridge_Core":  "^0.0.1"
+  }
+}
