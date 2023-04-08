@@ -1,4 +1,7 @@
-﻿using BSBBLib;
+﻿using BS_BotBridge_Chat.Configuration;
+using BS_BotBridge_Chat.UI;
+using BSBBLib;
+using BSBBLib.Packets;
 using BSBBLib.Interfaces;
 using HMUI;
 using SiraUtil.Logging;
@@ -10,16 +13,26 @@ namespace BS_BotBridge_Chat
     internal class Module : IModule
     {
         private SiraLog _logger;
+        private BSBBChatConfig _config;
         private IClient _client;
 
-        public FlowCoordinator FlowCoordinator => null;
-        public string DisplayName => null;
+        public FlowCoordinator FlowCoordinator { get; private set; }
+        public string DisplayName => "Chat";
         public string HoverText => null;
 
         [Inject]
-        public void InjectDependencies(SiraLog logger)
+        public void InjectAppDependencies(SiraLog logger, BSBBChatConfig config)
         {
             _logger = logger;
+            _config = config;
+            logger.Info($"{nameof(Module)} app dependecy injected");
+        }
+
+        [Inject]
+        public void InjectMenuDependencies(BSBBChatFlowCoordinator flowCoordinator)
+        {
+            FlowCoordinator = flowCoordinator;
+            _logger.Info($"{nameof(Module)} menu dependecy injected");
         }
 
         public void Initialize(IClient client)

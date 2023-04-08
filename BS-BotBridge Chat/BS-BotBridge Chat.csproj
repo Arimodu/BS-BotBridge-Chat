@@ -54,6 +54,9 @@
       <Private>False</Private>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="BSML">
+      <HintPath>E:\BSManager\BSInstances\1.28.0\Plugins\BSML.dll</HintPath>
+    </Reference>
     <Reference Include="SiraUtil">
       <HintPath>E:\BSManager\BSInstances\1.28.0\Plugins\SiraUtil.dll</HintPath>
     </Reference>
@@ -116,13 +119,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Installers\BSBBChatAppInstaller.cs" />
+    <Compile Include="Installers\BSBBChatMenuInstaller.cs" />
     <Compile Include="Managers\TwitchManager.cs" />
     <Compile Include="Managers\YoutubeManager.cs" />
     <Compile Include="Module.cs" />
-    <Compile Include="Packets\Enums.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Configuration\BSBBChatConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\BSBBChatFlowCoordinator.cs" />
+    <Compile Include="UI\BSBBChatViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="manifest.json" />
@@ -130,6 +135,9 @@
   <ItemGroup>
     <None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
     <None Include="BS_BotBridge_Chat.csproj.user" Condition="Exists('BS_BotBridge_Chat.csproj.user')" />
+    <EmbeddedResource Include="UI\BSBBChatViewController.bsml">
+      <DependentUpon>BSBBChatViewController.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BeatSaberModdingTools.Tasks">

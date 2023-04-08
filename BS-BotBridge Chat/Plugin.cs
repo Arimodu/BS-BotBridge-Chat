@@ -24,6 +24,7 @@ namespace BS_BotBridge_Chat
             zenject.UseMetadataBinder<Plugin>();
 
             zenject.Install<BSBBChatAppInstaller>(Location.App, conf.Generated<BSBBChatConfig>(), _module);
+            zenject.Install<BSBBChatMenuInstaller>(Location.Menu, _module);
         }
     }
 }
