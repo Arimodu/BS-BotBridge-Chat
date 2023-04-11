@@ -15,24 +15,25 @@ namespace BS_BotBridge_Chat
         private SiraLog _logger;
         private BSBBChatConfig _config;
         private IClient _client;
+        private BSBBChatViewController _viewController;
 
-        public FlowCoordinator FlowCoordinator { get; private set; }
         public string DisplayName => "Chat";
         public string HoverText => null;
+        public ViewController ViewController 
+        { 
+            get { return _viewController; }
+            internal set { _viewController = (BSBBChatViewController)value; }
+        }
+        public ViewController LeftViewController => null;
+        public ViewController RightViewController => null;
+        public ViewController TopViewController => null;
+        public ViewController BottomViewController => null;
 
         [Inject]
-        public void InjectAppDependencies(SiraLog logger, BSBBChatConfig config)
+        public void InjectDependencies(SiraLog logger, BSBBChatConfig config)
         {
             _logger = logger;
             _config = config;
-            logger.Info($"{nameof(Module)} app dependecy injected");
-        }
-
-        [Inject]
-        public void InjectMenuDependencies(BSBBChatFlowCoordinator flowCoordinator)
-        {
-            FlowCoordinator = flowCoordinator;
-            _logger.Info($"{nameof(Module)} menu dependecy injected");
         }
 
         public void Initialize(IClient client)

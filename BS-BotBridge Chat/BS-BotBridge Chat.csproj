@@ -118,16 +118,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\Vector3Converter.cs" />
     <Compile Include="Installers\BSBBChatAppInstaller.cs" />
     <Compile Include="Installers\BSBBChatMenuInstaller.cs" />
+    <Compile Include="Installers\ViewControllerInjector.cs" />
     <Compile Include="Managers\TwitchManager.cs" />
     <Compile Include="Managers\YoutubeManager.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Configuration\BSBBChatConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\BSBBChatFlowCoordinator.cs" />
     <Compile Include="UI\BSBBChatViewController.cs" />
+    <Compile Include="UI\ChatFloatingScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="manifest.json" />
@@ -137,6 +139,9 @@
     <None Include="BS_BotBridge_Chat.csproj.user" Condition="Exists('BS_BotBridge_Chat.csproj.user')" />
     <EmbeddedResource Include="UI\BSBBChatViewController.bsml">
       <DependentUpon>BSBBChatViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChatFloatingScreen.bsml">
+      <DependentUpon>ChatFloatingScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

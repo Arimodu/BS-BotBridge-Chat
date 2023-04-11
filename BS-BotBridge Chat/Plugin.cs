@@ -12,19 +12,18 @@ namespace BS_BotBridge_Chat
     [Plugin(RuntimeOptions.SingleStartInit)]
     public class Plugin
     {
-        private Module _module;
         [Init]
         public void Init(IPALogger logger, Config conf, BSBBModuleManager moduleManager, Zenjector zenject)
         {
-            _module = new Module();
+            Module module = new Module();
 
-            moduleManager.RegisterModule("Chat", _module);
+            moduleManager.RegisterModule("Chat", module);
 
             zenject.UseLogger(logger);
             zenject.UseMetadataBinder<Plugin>();
 
-            zenject.Install<BSBBChatAppInstaller>(Location.App, conf.Generated<BSBBChatConfig>(), _module);
-            zenject.Install<BSBBChatMenuInstaller>(Location.Menu, _module);
+            zenject.Install<BSBBChatAppInstaller>(Location.App, conf.Generated<BSBBChatConfig>(), module);
+            zenject.Install<BSBBChatMenuInstaller>(Location.Menu);
         }
     }
 }
