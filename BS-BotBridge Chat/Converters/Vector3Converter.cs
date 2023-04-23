@@ -3,7 +3,7 @@ using IPA.Config.Stores;
 using System;
 using UnityEngine;
 
-namespace BS_BotBridge_Chat.Converters
+namespace BSBBChat.Converters
 {
     internal class Vector3Converter : ValueConverter<Vector3>
     {
@@ -19,8 +19,6 @@ namespace BS_BotBridge_Chat.Converters
             }
             catch (Exception)
             {
-                throw;
-                // Rethrow as ArgumentException
                 throw new ArgumentException("Failed to parse value as Map of Vector3", nameof(value));
             }
         }

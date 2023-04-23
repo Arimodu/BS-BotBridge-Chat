@@ -1,7 +1,8 @@
 ﻿using Zenject;
-using BS_BotBridge_Chat.Configuration;
+using BSBBChat.Configuration;
+using BSBBChat.Managers;
 
-namespace BS_BotBridge_Chat.Installers
+namespace BSBBChat.Installers
 {
     internal class BSBBChatAppInstaller : Installer
     {

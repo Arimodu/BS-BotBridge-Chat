@@ -1,5 +1,5 @@
-﻿using BS_BotBridge_Chat.Configuration;
-using BS_BotBridge_Chat.UI;
+﻿using BSBBChat.Configuration;
+using BSBBChat.UI;
 using BSBBLib;
 using BSBBLib.Packets;
 using BSBBLib.Interfaces;
@@ -8,7 +8,7 @@ using SiraUtil.Logging;
 using System;
 using Zenject;
 
-namespace BS_BotBridge_Chat
+namespace BSBBChat
 {
     internal class Module : IModule
     {
@@ -16,6 +16,8 @@ namespace BS_BotBridge_Chat
         private BSBBChatConfig _config;
         private IClient _client;
         private BSBBChatViewController _viewController;
+
+        internal ChatFloatingScreen ChatFloatingScreen;
 
         public string DisplayName => "Chat";
         public string HoverText => null;

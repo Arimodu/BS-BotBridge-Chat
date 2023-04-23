@@ -1,8 +1,16 @@
 ﻿<bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
 	xsi:schemaLocation='https://monkeymanboy.github.io/BSML-Docs/ https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'
 	>
-	<horizontal horizontal-fit="PreferredSize" >
-		<text text='Message:' />
-		<text text="~YourTextProperty" />
-	</horizontal>
+	<vertical>
+		<bool-setting value='MenuScreenEnabled' apply-on-change='true' text='Show chat screen while in menu' />
+		<bool-setting value='GameScreenEnabled' apply-on-change='true' text='Show chat screen while in game' />
+		<bool-setting id='PauseScreenEnabled' value='PauseScreenEnabled' apply-on-change='true' text='Show chat screen while paused' hover-hint='Enabled automatically if Game Screen is enabled'/>
+		<bool-setting id='DifferentGameScreenPosition' value='DifferentGameScreenPosition' apply-on-change='true' text='Different game screen position' hover-hint='If false will be the same as Menu Screen Position'/>
+		<bool-setting id='DifferentPauseScreenPosition' value='DifferentPauseScreenPosition' apply-on-change='true' text='Different pause screen position' hover-hint='If false will be the same as Game Screen Position'/>
+		<bool-setting id='HandleEnabled' value='HandleEnabled' apply-on-change='true' text='Enable chat screen handle' />
+		<bool-setting id='HandleWholeScreen' value='HandleWholeScreen' apply-on-change='true' text='Show handle over entire screen' hover-hint='Screen handle will expand over entire screen for easier handling. Note that you cannot change screen size while this is enabled'/>
+		<bool-setting id='ReverseChatOrder' value='ReverseChatOrder' apply-on-change='true' text='Reverse chat order' />
+		<increment-setting id='ScreenWidth' value='ScreenWidth' apply-on-change='true' text='Screen Width' />
+		<increment-setting id='ScreenHeight' value='ScreenHeight' apply-on-change='true' text='Screen Height' />
+	</vertical>
 </bg>

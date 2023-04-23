@@ -1,7 +1,7 @@
-﻿using BS_BotBridge_Chat.UI;
+﻿using BSBBChat.UI;
 using Zenject;
 
-namespace BS_BotBridge_Chat.Installers
+namespace BSBBChat.Installers
 {
     internal class BSBBChatMenuInstaller : Installer
     {
